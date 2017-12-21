@@ -2,7 +2,7 @@
     font-family: $body-font;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    background: $blue;
+    background: $primary;
     text-align: center;
     padding: 7px 15px;
     color: #fff;
@@ -12,12 +12,12 @@
     cursor: pointer;
 
     &:hover {
-        background-color: lighten($blue, 5%);
+        background-color: darken($primary, 10%);
         color: #fff;
     }
 
     &.inactive {
-        background-color: $light;
+        background-color: $lightgray;
         color: #999;;
     }
 }
@@ -43,29 +43,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2 * $base-font-size;
-    margin: $spacing-m 0;
-    line-height: 2 * $base-line-height;
-}
-
-h2 {
     font-size: 1.75 * $base-font-size;
     margin: $spacing-m 0;
     line-height: 2 * $base-line-height;
 }
 
-h3 {
-    font-size: 1.5 * $base-font-size;
+h2 {
+    font-size: 1.25 * $base-font-size;
     margin: $spacing-m 0;
+    line-height: 1.5 * $base-line-height;
 }
 
-h4 {
+h3 {
     font-size: 1.25 * $base-font-size;
     margin: $spacing-m 0;
 }
 
+h4 {
+    font-size: 1 * $base-font-size;
+    margin: $spacing-m 0;
+}
+
 a {
-    color: $red;
+    color: $secondary;
 }
 
 a:link,
@@ -241,14 +241,18 @@ header {
         left: -9999px;
         right: -9999px;
         bottom: 0;
-        background: lighten($black, 10%);
+        background: $primary;
         z-index: -1;
     }
 }
 
 header a:link,
 header a:visited {
-    color: #fff;
+    color: $white;
+    font-weight: bold;
+    &:hover{
+        color: $darkgray;
+    }
 
 }
 
@@ -256,7 +260,6 @@ header .site-title {
     display: inline-block;
     vertical-align: middle;
     margin-right: auto;
-    background: $red;
     text-align: center;
 }
 
@@ -268,8 +271,6 @@ header h1 {
     margin: 0;
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
-    padding:7px 15px;
-    font-weight: normal;
 }
 
 header nav {
@@ -312,9 +313,10 @@ header nav ul ul ul {
 
 header nav a:link,
 header nav a:visited {
-    color: #fff;
+    color: $darkgray;
     &:hover{
-        border-bottom: 2px solid #fff;
+        color: $black;
+        border-bottom: 2px solid $black;
     }
 }
 
@@ -328,17 +330,20 @@ header nav a:visited {
 }
 
 #search-form input[type="text"] {
-    color: #fff;
+    color: $black;
     border:0;
     font-size: 13px;
+    outline:0;
 }
 
 #search-form button[type="submit"] {
     margin-left: 0;
     text-indent: -9999px;
     position: relative;
-    background:none;
-
+    background:$darkgray;
+    &:hover{
+        background:$black;
+    }
     &:before {
         content: "\f002";
         font-family: "FontAwesome";
@@ -456,8 +461,8 @@ nav.breadcrumbs {
 
 .item-showcase {
     margin: $spacing-l 0 ($spacing-l - 1px);
-    border-top: 1px solid $light;
-    border-bottom: 1px solid $light;
+    border-top: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
     padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
     text-align: center;
@@ -593,7 +598,7 @@ nav.breadcrumbs {
     }
 
     &.opaque {
-        border-color: $light;
+        border-color: $lightgray;
     }
 }
 
@@ -613,7 +618,7 @@ nav.breadcrumbs {
     font-weight: bold;
 
     &:hover {
-        background-color: $red;
+        background-color: $secondary;
         color: #fff;
         border-bottom-width: 0px;
     }
@@ -648,7 +653,7 @@ nav.breadcrumbs {
 
 .toc-block ul ul li:before {
     content: "\2014";
-    color: $light;
+    color: $lightgray;
 }
 
 .site-page-pagination {
@@ -671,7 +676,7 @@ ul.resource-list {
 }
 
 ul.resource-list .resource {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid $lightgray;
     padding-bottom: $spacing-l - 1px;
     margin: $spacing-l 0;
     overflow: hidden;
@@ -682,7 +687,7 @@ ul.resource-list .resource {
     }
 
     &:first-child {
-        border-top: 1px solid $light;
+        border-top: 1px solid $lightgray;
         padding-top: $spacing-l - 1px;
     }
 }
@@ -700,7 +705,7 @@ ul.resource-list .resource h4 {
     font-size:16px;
     color:#000;
     &:hover{
-        color: lighten($blue,10%);
+        color: lighten($primary,10%);
     }
 }
 }
@@ -742,24 +747,23 @@ ul.resource-list .resource img ~ * {
     font-family: $body-font;
     font-size: 12px;
     display: block;
-    margin: 10px 0;
-    line-height: $base-line-height;
+    margin: 0;
+    line-height: 30px;
     vertical-align: middle;
-    width: calc(20% - #{.75 * $spacing-l});;
+    width: calc(20% - #{.75 * $spacing-l});
     float: left;
     text-align: right;
-    border-bottom: 2px solid lighten($blue, 5%);
-    border-top: 2px solid lighten($blue, 5%);
+    background: $black;
     text-transform: uppercase;
     padding: 0 5px;
-    color: $blue;
+    color: $white;
 }
 
 .resource .property {
-    background: #e2eaea;
+    background: lighten($primary, 25%);
     margin-bottom: 5px;
     text-align: right;
-    width: 80%;
+    width: 100%;
     float: left;
     display: flex;
     flex-wrap: wrap;
@@ -805,7 +809,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource .property .language {
-    background-color: $light;
+    background-color: $lightgray;
     padding: 0 $spacing-s;
 }
 
@@ -823,12 +827,12 @@ ul.resource-list .resource img ~ * {
 .resource .media-list {
     display: inline-block;
     text-align: center;
-    width: 18%;
+    width: 100%;
     margin: 0 0 0 2%;
 }
 
 .resource .media-list img {
-    max-width: 100%;
+    max-width: 20%;
     height: auto;
     margin-bottom: $spacing-l;
 }
@@ -972,7 +976,7 @@ a.advanced-search {
     padding:7px 15px;
     color:#000;
     &:hover{
-        background: $blue;
+        background: $primary;
         color:#fff;
     }
 }
@@ -983,7 +987,15 @@ a.advanced-search {
 
 #advanced-search .inputs .value {
     margin-bottom: $spacing-m;
+}
 
+#advanced-search {
+.button {
+    background: darken($gray,5%);
+    &:hover{
+        background: darken($gray,15%);
+    }
+}
 }
 
 .remove-value.button {

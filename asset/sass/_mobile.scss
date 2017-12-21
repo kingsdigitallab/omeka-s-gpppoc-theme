@@ -135,7 +135,7 @@ select {
   visibility: hidden;
   width: 225px;
   z-index: 100;
-  background: desaturate(lighten($red, 50%), 60%);
+  background: desaturate(lighten($secondary, 50%), 60%);
 }
 .oc-menu-open .oc-menu::after {
   height: 0;
