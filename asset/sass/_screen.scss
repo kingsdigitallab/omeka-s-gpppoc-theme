@@ -670,6 +670,7 @@ nav.breadcrumbs {
     clear: both;
     margin-top: $spacing-l;
     color: #fff;
+    display:none;
 }
 
 .site-page-pagination a {
@@ -799,20 +800,7 @@ ul.resource-list .resource img ~ * {
     display: inline-block;
 }
 
-.resource .property .values{
-    width: 75%;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    background: $lightgray;
-    padding: 15px;
-
-    /**&:not(:first-of-type) {
-        border-top: 1px solid $gray;
-        padding-top: $spacing-s - 1px;
-        margin-top: $spacing-s;
-    }**/
-}
+.resource .property .values, 
 .resource .property .value {
     width: 75%;
     display: inline-block;
@@ -820,7 +808,13 @@ ul.resource-list .resource img ~ * {
     text-align: left;
     background: $lightgray;
     padding: 15px;
+    /**&:not(:first-of-type) {
+        border-top: 1px solid $gray;
+        padding-top: $spacing-s - 1px;
+        margin-top: $spacing-s;
+    }**/
 }
+
 
 .resource .property .language {
     background-color: $lightgray;
