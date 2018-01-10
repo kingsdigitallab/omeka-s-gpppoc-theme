@@ -16,7 +16,7 @@ $labelInfo = $this->setting('property_label_information');
         	$term = $escape($propertyData['property']->term());
         	if (strpos($term, 'eac') !== false)
         	{
-        		echo '<a target="_blank" href="http://eac.staatsbibliothek-berlin.de/schema/taglibrary/cpfTagLibrary_EN.html#' . explode('p.', $term)[1] . '"> ' . $term . ' <i class="fa  fa-external-link"></i></a>';
+        		echo '<a target="_blank" href="http://eac.staatsbibliothek-berlin.de/schema/taglibrary/cpfTagLibrary_EN.html#' . explode('p.', $term)[1] . '"> ' . $term . ' <i class="fa fa-question-circle"></i></a>';
         	}
         	else
         	{

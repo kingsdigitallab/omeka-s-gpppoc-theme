@@ -75,7 +75,7 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
                         <?php if ($footerContent = $this->themeSetting('footer')): ?>
                         <?php echo $footerContent; ?>
                         <?php else: ?>
-                            <?php echo $this->translate('Powered by Omeka S'); ?>
+                            <a href="https://omeka.org/s/"><?php echo $this->translate('Powered by Omeka S'); ?></a>
                         <?php endif; ?>
                     </footer>
                   </div>

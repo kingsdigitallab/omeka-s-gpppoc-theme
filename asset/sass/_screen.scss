@@ -65,13 +65,19 @@ h4 {
 }
 
 a {
-    color: $secondary;
+    color: darken($primary, 10%);
 }
 
 a:link,
 a:visited {
     text-decoration: none;
 }
+
+a:hover{
+    text-decoration: underline;
+    color: darken($primary, 25%);
+}
+
 
 p a,
 span a,
@@ -213,6 +219,7 @@ nav ul {
 .pagination form {
     display: inline-block;
     margin-right: $spacing-l;
+    float: right;
 }
 
 .pagination input[type="text"] {
@@ -316,6 +323,7 @@ header nav a:visited {
     &:hover{
         color: $black;
         border-bottom: 2px solid $black;
+        text-decoration: none;
     }
 }
 
@@ -375,9 +383,12 @@ header nav a:visited {
 
 footer {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 3rem auto 0 auto;
     padding: $spacing-l;
     overflow: hidden;
+    text-align: right;
+    font-size:0.75rem;
+
 }
 
 /* @end */
@@ -702,10 +713,7 @@ ul.resource-list .resource h4 {
     margin-top: 0;
     a{
     font-size:16px;
-    color:#000;
-    &:hover{
-        color: lighten($primary,10%);
-    }
+
 }
 }
 
@@ -791,20 +799,27 @@ ul.resource-list .resource img ~ * {
     display: inline-block;
 }
 
-.resource .property .values,
-.resource .property h4 + .value {
+.resource .property .values{
     width: 75%;
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    background: #f0f0f0;
+    background: $lightgray;
     padding: 15px;
 
-    &:not(:first-of-type) {
+    /**&:not(:first-of-type) {
         border-top: 1px solid $gray;
         padding-top: $spacing-s - 1px;
         margin-top: $spacing-s;
-    }
+    }**/
+}
+.resource .property .value {
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    background: $lightgray;
+    padding: 15px;
 }
 
 .resource .property .language {
@@ -976,13 +991,14 @@ caption.linked-resource-property{
 }
 
 a.advanced-search {
-    float: right;
     font-size: 16px;
     padding:7px 15px;
-    color:#000;
-    &:hover{
-        background: $primary;
-        color:#fff;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+;    &:after {
+        content: "\f002";
+        font-family: "FontAwesome";
     }
 }
 
