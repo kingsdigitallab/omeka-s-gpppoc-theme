@@ -191,6 +191,7 @@ td {
 .oc-content-inner {
     background-color: #fff;
 
+    /* Causing scroll issues
     &:after {
         content: "";
         background-color: #fff;
@@ -200,7 +201,7 @@ td {
         left: 0;
         z-index: -1;
         height: 9999px;
-    }
+    }*/
 }
 
 nav ul {
